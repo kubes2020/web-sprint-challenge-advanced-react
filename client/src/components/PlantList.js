@@ -9,11 +9,11 @@ export default class PlantList extends Component {
     };
   }
   // add state with a property called "plants" - initialize as an empty array
+
   componentDidMount() {
     axios
       .get("http://localhost:3333/plants")
       .then((res) => {
-        //maybe need res.data.plantsData
         console.log("data res", res.data.plantsData);
         this.setState({
           plants: res.data.plantsData,
@@ -23,6 +23,26 @@ export default class PlantList extends Component {
         console.log("theres an error", err);
       });
   }
+
+  //tried to filter results to one plant for fun, didn't work
+  // componentDidMount() {
+  //   axios
+  //     .get("http://localhost:3333/plants")
+  //     .then((res) => {
+  //       console.log("data res", res.data.plantsData[4]);
+  //       this.setState({
+  //         plants: [
+  //           res.data.plantsData.filter((item) => {
+  //             item.name === "Jade Plant";
+  //           }),
+  //         ],
+  //       });
+  //     })
+  //     .catch((err) => {
+  //       console.log("theres an error", err);
+  //     });
+  // }
+
   // when the component mounts:
   //   - fetch data from the server endpoint - http://localhost:3333/plants
   //   - set the returned plants array to this.state.plants
