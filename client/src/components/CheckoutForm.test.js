@@ -11,7 +11,7 @@ test("form header renders", () => {
   expect(header).toBeInTheDocument();
 });
 
-test("form shows success message on submit with form details", () => {
+test("form shows success message on submit with form details", async () => {
   render(<CheckoutForm />);
 
   const firstName = screen.getByLabelText(/first name/i);
@@ -29,6 +29,11 @@ test("form shows success message on submit with form details", () => {
   fireEvent.change(state, { target: { value: "CA" } });
   fireEvent.change(zip, { target: { value: "90019" } });
   fireEvent.click(checkoutButton);
+
+  const successMessage = await screen.findByText(
+    /You have ordered some plants!/i
+  );
+  expect(successMessage).toBeInTheDocument();
 
   // You have ordered some plants!
 });
