@@ -30,7 +30,7 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
-- class <name> extends React.Component, constructor(), super(), this.state = ()
+- class <name> extends React.Component, constructor(), super(), this.state = () and don't forget render(){ return( ) }
 
 2. Describe the different phases of the component lifecycle.
 
@@ -38,11 +38,11 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
-- The mount is when the page first loads, it loads state and attaches it to the class object, loads render, then checks for componentDidMount() calls. If state or props are updated, then componentDidUpdate() will be triggered. When componentWillUnmount() then all events listeners should be canceled.
+- The mount is when the page first loads, it loads state and attaches it to the class object, loads render, then checks for componentDidMount() calls. If state or props are updated, then componentDidUpdate() will be triggered. When componentWillUnmount() then all event listeners should be canceled.
 
 4. Define stateful logic.
 
-- It's state that is stored in a component that also handles the logic controling the state.
+- It's state that is stored in a component that also handles the logic controling the state. When state changes the page re-renders.
 
 5. Describe how to test a React component with React Testing Library.
 

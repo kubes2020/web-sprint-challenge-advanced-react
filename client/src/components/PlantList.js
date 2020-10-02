@@ -24,7 +24,7 @@ export default class PlantList extends Component {
       });
   }
 
-  //tried to filter results to one plant for fun, didn't work
+  // tried to filter results to one plant for fun, didn't work
   // componentDidMount() {
   //   axios
   //     .get("http://localhost:3333/plants")
